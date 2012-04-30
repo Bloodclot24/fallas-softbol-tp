@@ -1,0 +1,53 @@
+-- Palabras y frases del experto para incluir en el diccionario, tomadas de los videos --
+
+
+-- fastball--
+seams
+ball release
+fastball
+strikes
+"ball missing too high"
+"ball going to the ground"
+pitch
+corners
+"the best time to throw fastball is to get ahead on the count"
+"1-0 count, 2-0 count"
+"the fastball grip"
+"find the 'C' that's made from the seams"
+"it's very importante to have a base fastball"
+
+
+-- change up --
+catcher
+hitters
+"dirt"
+"first pitch, second pitch, in the middle of the count"
+
+
+
+-- rise ball--
+four-seam grip and two-seam grip
+fade in, fade away
+" a true jump from six to twelve like on a clock"
+"strike out pitch"
+swing
+
+-- drop ball--
+peel drop
+"round ball out"
+"on second and third"
+endfield, outfield
+infielders
+
+
+-- screwball ---
+illegal pitch
+plate
+righthanded hitters, lefty slappers
+"the white chalk"
+righthanded "algo" box
+
+-- rise drop and curve--
+turnover
+
+
