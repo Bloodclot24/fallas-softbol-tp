@@ -1,14 +1,14 @@
 -- Palabras y frases del experto para incluir en el diccionario, tomadas de los videos --
-
+(las que tienen un - es porque las pase al diccionario)
 
 -- fastball--
 seams
 ball release
 fastball
-strikes
+- strikes
 "ball missing too high"
 "ball going to the ground"
-pitch
+- pitch
 corners
 "the best time to throw fastball is to get ahead on the count"
 "1-0 count, 2-0 count"
@@ -18,8 +18,8 @@ corners
 
 
 -- change up --
-catcher
-hitters
+- catcher
+- hitters
 "dirt"
 "first pitch, second pitch, in the middle of the count"
 
@@ -45,7 +45,7 @@ illegal pitch
 plate
 righthanded hitters, lefty slappers
 "the white chalk"
-righthanded "algo" box
+righthanded hitter box
 
 -- rise drop and curve--
 turnover
