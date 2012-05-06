@@ -1,0 +1,3 @@
+Esto es lo que no se como agregar:
+	- Lugares del campo, tipo: base, campo interno
+	- Puntajes y esas cosas 
