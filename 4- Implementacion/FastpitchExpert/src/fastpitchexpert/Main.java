@@ -15,6 +15,8 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        descrPanel.setVisible(false);
+        questionPanel.setVisible(false);
     }
 
     /**
@@ -26,7 +28,6 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLayeredPane1 = new javax.swing.JLayeredPane();
         jToolBar1 = new javax.swing.JToolBar();
         btn_new = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JToolBar.Separator();
@@ -35,11 +36,13 @@ public class Main extends javax.swing.JFrame {
         btn_info = new javax.swing.JButton();
         btn_help = new javax.swing.JButton();
         questionPanel = new javax.swing.JPanel();
-        question_lbl = new javax.swing.JLabel();
         btnNext = new javax.swing.JButton();
         btnPrev = new javax.swing.JButton();
         question_options = new javax.swing.JComboBox();
-        option_description = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        option_description = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        question_lbl = new javax.swing.JTextArea();
         descrPanel = new javax.swing.JPanel();
         DescriptionPane = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
@@ -47,11 +50,13 @@ public class Main extends javax.swing.JFrame {
         descrImg = new javax.swing.JLabel();
         description_label = new javax.swing.JLabel();
         jTextArea1 = new javax.swing.JTextArea();
+        bg_lbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Fastpitch Expert");
         setPreferredSize(new java.awt.Dimension(720, 520));
         setResizable(false);
+        getContentPane().setLayout(null);
 
         jToolBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         jToolBar1.setRollover(true);
@@ -99,16 +104,11 @@ public class Main extends javax.swing.JFrame {
         });
         jToolBar1.add(btn_help);
 
+        getContentPane().add(jToolBar1);
+        jToolBar1.setBounds(0, 0, 720, 40);
+
         questionPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Preguntas"));
         questionPanel.setMaximumSize(new java.awt.Dimension(600, 400));
-
-        question_lbl.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
-        question_lbl.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        question_lbl.setText("¿Cuál fué la velocidad promedio de la bola?");
-        question_lbl.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        question_lbl.setRequestFocusEnabled(false);
-        question_lbl.setVerifyInputWhenFocusTarget(false);
-        question_lbl.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
 
         btnNext.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/next32.png"))); // NOI18N
@@ -138,10 +138,34 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        option_description.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        option_description.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        option_description.setText("Descripción item 1");
-        option_description.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jScrollPane1.setBorder(null);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        option_description.setBackground(new java.awt.Color(240, 240, 240));
+        option_description.setColumns(20);
+        option_description.setEditable(false);
+        option_description.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        option_description.setLineWrap(true);
+        option_description.setRows(5);
+        option_description.setText("Descripcion item 1");
+        option_description.setWrapStyleWord(true);
+        option_description.setBorder(null);
+        jScrollPane1.setViewportView(option_description);
+
+        jScrollPane2.setBorder(null);
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+
+        question_lbl.setBackground(new java.awt.Color(240, 240, 240));
+        question_lbl.setColumns(20);
+        question_lbl.setEditable(false);
+        question_lbl.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        question_lbl.setLineWrap(true);
+        question_lbl.setRows(2);
+        question_lbl.setText("¿Pregunta?");
+        question_lbl.setWrapStyleWord(true);
+        question_lbl.setBorder(null);
+        jScrollPane2.setViewportView(question_lbl);
 
         javax.swing.GroupLayout questionPanelLayout = new javax.swing.GroupLayout(questionPanel);
         questionPanel.setLayout(questionPanelLayout);
@@ -149,37 +173,37 @@ public class Main extends javax.swing.JFrame {
             questionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(questionPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(option_description, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(questionPanelLayout.createSequentialGroup()
-                .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnNext))
-            .addGroup(questionPanelLayout.createSequentialGroup()
                 .addGroup(questionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
                     .addGroup(questionPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(question_options, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(question_options, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(questionPanelLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(question_lbl)))
-                .addGap(0, 10, Short.MAX_VALUE))
+                        .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnNext)))
+                .addContainerGap())
         );
         questionPanelLayout.setVerticalGroup(
             questionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(questionPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(question_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(question_options, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(option_description, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71)
                 .addGroup(questionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnNext)
                     .addComponent(btnPrev))
                 .addContainerGap())
         );
+
+        getContentPane().add(questionPanel);
+        questionPanel.setBounds(0, 40, 343, 450);
+        questionPanel.getAccessibleContext().setAccessibleName("");
 
         descrPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Descripción"));
         descrPanel.setFocusable(false);
@@ -216,12 +240,12 @@ public class Main extends javax.swing.JFrame {
         description_label.setFont(new java.awt.Font("Berlin Sans FB", 2, 24)); // NOI18N
         description_label.setText("FastBall");
 
+        jTextArea1.setBackground(new java.awt.Color(240, 240, 240));
         jTextArea1.setColumns(20);
         jTextArea1.setEditable(false);
         jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextArea1.setLineWrap(true);
         jTextArea1.setRows(20);
-        jTextArea1.setText("lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.lalalaalla softball.");
         jTextArea1.setWrapStyleWord(true);
         jTextArea1.setAutoscrolls(false);
         jTextArea1.setCaretPosition(0);
@@ -235,8 +259,8 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(description_label, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(description_label, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(101, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -256,7 +280,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(descrImgPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(509, Short.MAX_VALUE)))
+                    .addContainerGap(424, Short.MAX_VALUE)))
         );
 
         DescriptionPane.setViewportView(jPanel1);
@@ -267,33 +291,20 @@ public class Main extends javax.swing.JFrame {
             descrPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(descrPanelLayout.createSequentialGroup()
                 .addComponent(DescriptionPane, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 18, Short.MAX_VALUE))
         );
         descrPanelLayout.setVerticalGroup(
             descrPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DescriptionPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
+            .addComponent(DescriptionPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(questionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(descrPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 363, Short.MAX_VALUE))
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(descrPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
-                    .addComponent(questionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
+        getContentPane().add(descrPanel);
+        descrPanel.setBounds(349, 40, 371, 450);
         descrPanel.getAccessibleContext().setAccessibleName("");
+
+        bg_lbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/bg.png"))); // NOI18N
+        getContentPane().add(bg_lbl);
+        bg_lbl.setBounds(0, 0, 720, 520);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -312,7 +323,7 @@ public class Main extends javax.swing.JFrame {
             actualizarElementos();
         }
         else {
-            //TODO pasar el resultado
+            procesarRespuestas();
             mostrarResultado();
         }
     }//GEN-LAST:event_btnNextActionPerformed
@@ -321,6 +332,7 @@ public class Main extends javax.swing.JFrame {
         FastpitchExpert.getInstance().init();
         questionPanel.setVisible(true);
         descrPanel.setVisible(true);
+        bg_lbl.setVisible(false);
         _preguntaActual = FastpitchExpert.getInstance().getProximaPregunta();
         actualizarElementos();
     }//GEN-LAST:event_btn_newActionPerformed
@@ -430,6 +442,7 @@ public class Main extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane DescriptionPane;
+    private javax.swing.JLabel bg_lbl;
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnPrev;
     private javax.swing.JButton btn_help;
@@ -440,15 +453,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel descrPanel;
     private javax.swing.JLabel description_label;
     private javax.swing.Box.Filler filler1;
-    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JToolBar jToolBar1;
-    private javax.swing.JLabel option_description;
+    private javax.swing.JTextArea option_description;
     private javax.swing.JPanel questionPanel;
-    private javax.swing.JLabel question_lbl;
+    private javax.swing.JTextArea question_lbl;
     private javax.swing.JComboBox question_options;
     // End of variables declaration//GEN-END:variables
         
