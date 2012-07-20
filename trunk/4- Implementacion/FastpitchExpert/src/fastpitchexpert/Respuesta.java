@@ -10,8 +10,9 @@ package fastpitchexpert;
  */
 public class Respuesta {
     
-    public String respuesta;
-    public String descripcion;
+    public String respuesta;    //para mostrar al usuario
+    public String descripcion;  //descripcion de la respuesta
+    public String codigo;       //codigo interno para drools
     
     @Override
     public String toString() {
