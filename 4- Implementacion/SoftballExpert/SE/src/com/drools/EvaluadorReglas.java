@@ -1,4 +1,9 @@
 package com.drools;
+
+import com.drools.Lanzador;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import org.drools.RuleBase;
@@ -6,7 +11,7 @@ import org.drools.RuleBaseFactory;
 import org.drools.WorkingMemory;
 import org.drools.compiler.PackageBuilder;
 import org.drools.rule.Package; 
-	
+
 public class EvaluadorReglas {
 	 
 	    public String evaluarReglas(Lanzador lanzador) {
@@ -31,9 +36,11 @@ public class EvaluadorReglas {
 	    
 	    private static RuleBase leerReglas() throws Exception {
 	        //Leemos el archivo de reglas (DRL)
-	        Reader source = new InputStreamReader(
+	    	InputStream in = new FileInputStream("../bin/reglasV1.drl");
+	    	Reader source = new InputStreamReader(in, "US-ASCII");
+	     /*   Reader source = new InputStreamReader(
 	            EvaluadorReglas.class.getResourceAsStream("reglasV1.drl"));
-	 
+	 */
 	        //Construimos un paquete de reglas
 	        PackageBuilder builder = new PackageBuilder();
 	 
