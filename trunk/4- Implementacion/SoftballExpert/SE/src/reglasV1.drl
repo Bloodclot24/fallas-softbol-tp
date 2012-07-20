@@ -1,0 +1,63 @@
+import java.math.BigDecimal;
+import com.drools.Lanzador;
+
+
+rule "Fastball"
+    when
+        lanzador : Lanzador(distPeso == "Medio", pies == "NoAlineado", soltadoPelota == "Medio", movMunieca == "Medio", traza == "Recta", velocidad == "Alta" )
+    then
+        lanzador.setLanzamiento("Fastball");
+        System.out.println("Lanzamiento: " + lanzador.getLanzamiento());
+        
+        
+end
+ 
+rule "Changeup"
+    when
+        lanzador : Lanzador(distPeso == "Medio", pies == "Alineado", soltadoPelota == "Medio", movMunieca == "Poco", traza == "Recta", velocidad == "Baja" )
+    then
+        lanzador.setLanzamiento("Changeup");
+        System.out.println("Lanzamiento: " + lanzador.getLanzamiento());
+        
+        
+end 
+ 
+rule "Curveball"
+    when
+        lanzador : Lanzador(distPeso == "Medio", pies == "Alineado", soltadoPelota == "Medio", movMunieca == "Mucho", traza == "Curva", velocidad == "Media" )
+    then
+        lanzador.setLanzamiento("Curveball");
+        System.out.println("Lanzamiento: " + lanzador.getLanzamiento());
+        
+        
+end
+
+rule "Riseball"
+    when
+        lanzador : Lanzador(distPeso == "Atras", pies == "Alineado", soltadoPelota == "Medio", movMunieca == "Mucho", traza == "Trepa", velocidad == "Media" )
+    then
+        lanzador.setLanzamiento("Riseball");
+        System.out.println("Lanzamiento: " + lanzador.getLanzamiento());
+        
+        
+end
+
+rule "Dropball"
+    when
+        lanzador : Lanzador(distPeso == "Delante", pies == "Alineado", soltadoPelota == "Atras", movMunieca == "Medio", traza == "Baja", velocidad == "Media" )
+    then
+        lanzador.setLanzamiento("Dropball");
+        System.out.println("Lanzamiento: " + lanzador.getLanzamiento());
+        
+        
+end
+
+rule "Screwball"
+    when
+        lanzador : Lanzador(distPeso == "Medio", pies == "Alineado", soltadoPelota == "Delante", movMunieca == "Mucho", traza == "Curva", velocidad == "Media" )
+    then
+        lanzador.setLanzamiento("Screwball");
+        System.out.println("Lanzamiento: " + lanzador.getLanzamiento());
+        
+        
+end
