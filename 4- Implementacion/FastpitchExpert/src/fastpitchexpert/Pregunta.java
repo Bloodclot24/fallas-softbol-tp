@@ -17,18 +17,19 @@ public class Pregunta {
     public ArrayList<Respuesta> respuestas;
     public Image image;
     
-    private Respuesta _respuestaElegida = null;
+    private int _respuestaElegida;
     
     public Pregunta() {
         respuestas = new ArrayList<Respuesta>();
+        _respuestaElegida = 0;
     }
     
-    public void elegirRespuesta(Respuesta rta) {
+    public void elegirRespuesta(int rta) {
         _respuestaElegida = rta;
     }
     
-    public boolean hayRespuesta() {
-        return _respuestaElegida != null;
+    public int respuestaElegida() {
+        return _respuestaElegida;
     }
 
 }

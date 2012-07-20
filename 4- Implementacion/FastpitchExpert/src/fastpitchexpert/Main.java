@@ -148,25 +148,22 @@ public class Main extends javax.swing.JFrame {
         questionPanelLayout.setHorizontalGroup(
             questionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(questionPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(option_description, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(questionPanelLayout.createSequentialGroup()
+                .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnNext))
+            .addGroup(questionPanelLayout.createSequentialGroup()
                 .addGroup(questionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(questionPanelLayout.createSequentialGroup()
-                        .addGroup(questionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(questionPanelLayout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(questionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(questionPanelLayout.createSequentialGroup()
-                                        .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnNext))
-                                    .addComponent(question_lbl)))
-                            .addGroup(questionPanelLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(question_options, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(questionPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(option_description, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(question_options, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(questionPanelLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(question_lbl)))
+                .addGap(0, 10, Short.MAX_VALUE))
         );
         questionPanelLayout.setVerticalGroup(
             questionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,15 +299,13 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPrevActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrevActionPerformed
-       
+       if (FastpitchExpert.getInstance().hayPrevia()) {
+            _preguntaActual = FastpitchExpert.getInstance().getPreviaPregunta();
+            actualizarElementos();
+        }
     }//GEN-LAST:event_btnPrevActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
-        
-        if (_preguntaActual != null && !_preguntaActual.hayRespuesta()) {
-            //TODO mostrar popup pidiendo que se elija la rta
-            return;
-        }
         
         if (FastpitchExpert.getInstance().hayProxima()) {
             _preguntaActual = FastpitchExpert.getInstance().getProximaPregunta();
@@ -340,8 +335,10 @@ public class Main extends javax.swing.JFrame {
 
     private void question_optionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_question_optionsActionPerformed
         try{
-            Respuesta r = (Respuesta) question_options.getSelectedItem();
-            option_description.setText(r.descripcion);
+            if (!_actualizando) {
+                actualizarRespuesta();
+                _preguntaActual.elegirRespuesta(question_options.getSelectedIndex());
+            }
         }catch(Exception e) {}
     }//GEN-LAST:event_question_optionsActionPerformed
 
@@ -349,10 +346,13 @@ public class Main extends javax.swing.JFrame {
     //---------------------------- Mi codigo aca! -------------------------//
     
     private Pregunta _preguntaActual;
+    private boolean _actualizando = false;
     
     private void actualizarElementos() {
+        _actualizando = true;
         actualizarBotones();
         actualizarPregunta();
+        _actualizando = false;
     }
     
     private void actualizarBotones() {
@@ -369,7 +369,13 @@ public class Main extends javax.swing.JFrame {
         for (int i=0; i<_preguntaActual.respuestas.size(); ++i) {
             question_options.addItem(_preguntaActual.respuestas.get(i));
         }
-        question_options.setSelectedIndex(0);
+        question_options.setSelectedIndex(_preguntaActual.respuestaElegida());
+        actualizarRespuesta();
+    }
+    
+    private void actualizarRespuesta() {
+        Respuesta r = (Respuesta) question_options.getSelectedItem();
+        option_description.setText(r.descripcion);
     }
     
     private void mostrarResultado() {
