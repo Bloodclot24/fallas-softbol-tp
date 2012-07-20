@@ -1,11 +1,14 @@
 import com.drools.EvaluadorReglas;
 import com.drools.Lanzador;
 
+import drools.EV;
+
 
 public class Main {
 
 	public static void main(String[] args) {
-		EvaluadorReglas ev = new EvaluadorReglas();
+		//EvaluadorReglas ev = new EvaluadorReglas();
+		EV ev = new EV();
 		Lanzador lanzador = new Lanzador();
 		lanzador.setDistPeso("Medio");
 		lanzador.setPies("NoAlineado");
