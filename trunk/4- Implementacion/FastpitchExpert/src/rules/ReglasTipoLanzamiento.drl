@@ -1,0 +1,68 @@
+package rules;
+import lanzamientos.*;
+
+rule "Fastball"
+no-loop true
+    when
+        lanzamiento : Lanzamiento(distPeso == "Medio", pies == "NoAlineado", soltadoPelota == "Medio", movMunieca == "Medio", traza == "Recta", velocidad == "Alta" )
+    then
+        lanzamiento.setLanzamiento("Fastball");
+        System.out.println("Lanzamiento: " + lanzamiento.getLanzamiento());
+        
+        
+end
+ 
+rule "Changeup"
+no-loop true
+    when
+        lanzamiento : Lanzamiento(distPeso == "Medio", pies == "Alineado", soltadoPelota == "Medio", movMunieca == "Poco", traza == "Recta", velocidad == "Baja" )
+    then
+        lanzamiento.setLanzamiento("Changeup");
+        System.out.println("Lanzamiento: " + lanzamiento.getLanzamiento());
+        
+        
+end 
+ 
+rule "Curveball"
+no-loop true
+    when
+        lanzamiento : Lanzamiento(distPeso == "Medio", pies == "Alineado", soltadoPelota == "Medio", movMunieca == "Mucho", traza == "Curva", velocidad == "Media" )
+    then
+        lanzamiento.setLanzamiento("Curveball");
+        System.out.println("Lanzamiento: " + lanzamiento.getLanzamiento());
+        
+        
+end
+
+rule "Riseball"
+no-loop true
+    when
+        lanzamiento : Lanzamiento(distPeso == "Atras", pies == "Alineado", soltadoPelota == "Medio", movMunieca == "Mucho", traza == "Trepa", velocidad == "Media" )
+    then
+        lanzamiento.setLanzamiento("Riseball");
+        System.out.println("Lanzamiento: " + lanzamiento.getLanzamiento());
+        
+        
+end
+
+rule "Dropball"
+no-loop true
+    when
+        lanzamiento : Lanzamiento(distPeso == "Delante", pies == "Alineado", soltadoPelota == "Atras", movMunieca == "Medio", traza == "Baja", velocidad == "Media" )
+    then
+        lanzamiento.setLanzamiento("Dropball");
+        System.out.println("Lanzamiento: " + lanzamiento.getLanzamiento());
+        
+        
+end
+
+rule "Screwball"
+no-loop true
+    when
+        lanzamiento : Lanzamiento(distPeso == "Medio", pies == "Alineado", soltadoPelota == "Delante", movMunieca == "Mucho", traza == "Curva", velocidad == "Media" )
+    then
+        lanzamiento.setLanzamiento("Screwball");
+        System.out.println("Lanzamiento: " + lanzamiento.getLanzamiento());
+        
+        
+end
