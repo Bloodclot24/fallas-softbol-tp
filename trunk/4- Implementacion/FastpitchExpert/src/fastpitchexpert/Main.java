@@ -4,6 +4,8 @@
  */
 package fastpitchexpert;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import lanzamientos.DescrTipoLanzamiento;
 
 /**
@@ -19,6 +21,9 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         descrPanel.setVisible(false);
         questionPanel.setVisible(false);
+        this.setLocationRelativeTo(null);
+        infoDialog.setLocationRelativeTo(null);
+        helpDialog.setLocationRelativeTo(null);
     }
 
     /**
@@ -30,6 +35,12 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        infoDialog = new javax.swing.JDialog();
+        jLabel1 = new javax.swing.JLabel();
+        jTextArea1 = new javax.swing.JTextArea();
+        helpDialog = new javax.swing.JDialog();
+        jLabel2 = new javax.swing.JLabel();
+        jTextArea2 = new javax.swing.JTextArea();
         bg_lbl = new javax.swing.JLabel();
         jToolBar1 = new javax.swing.JToolBar();
         btn_new = new javax.swing.JButton();
@@ -54,8 +65,94 @@ public class Main extends javax.swing.JFrame {
         description_label = new javax.swing.JLabel();
         description_text = new javax.swing.JTextArea();
 
+        infoDialog.setTitle("Fastpitch Expert - Acerca de");
+        infoDialog.setIconImage(getIconImage());
+        infoDialog.setMinimumSize(new java.awt.Dimension(383, 330));
+        infoDialog.setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
+        infoDialog.setResizable(false);
+
+        jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 2, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Fastpitch Expert");
+
+        jTextArea1.setBackground(new java.awt.Color(240, 240, 240));
+        jTextArea1.setColumns(30);
+        jTextArea1.setEditable(false);
+        jTextArea1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Sistema Experto de detección de lanzamientos de un pitcher en Softball Fastpitch femenino.\n\nTrabajo práctico de la materia Sistemas automáticos de diagnóstico y detección de fallas, Facultad de Ingeniería, UBA. 1er cuatrimestre 2012.\n\nDesarrollado por: \n- Verónica Bukaczewski\n- Lucía Garbarini\n- Guido Ygounet\n\n");
+        jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setMinimumSize(new java.awt.Dimension(244, 174));
+
+        javax.swing.GroupLayout infoDialogLayout = new javax.swing.GroupLayout(infoDialog.getContentPane());
+        infoDialog.getContentPane().setLayout(infoDialogLayout);
+        infoDialogLayout.setHorizontalGroup(
+            infoDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoDialogLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(infoDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTextArea1, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE))
+                .addGap(17, 17, 17))
+        );
+        infoDialogLayout.setVerticalGroup(
+            infoDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(infoDialogLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jTextArea1, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        helpDialog.setTitle("Fastpitch Expert - Ayuda");
+        helpDialog.setIconImage(getIconImage());
+        helpDialog.setMinimumSize(new java.awt.Dimension(400, 300));
+        helpDialog.setModal(true);
+        helpDialog.setResizable(false);
+
+        jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 2, 24)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Fastpitch Expert");
+
+        jTextArea2.setBackground(new java.awt.Color(240, 240, 240));
+        jTextArea2.setColumns(30);
+        jTextArea2.setEditable(false);
+        jTextArea2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextArea2.setLineWrap(true);
+        jTextArea2.setRows(5);
+        jTextArea2.setText("Responde, para cada pregunta, la característica del lanzamiento. Elige la opción que más se asemeje al lanzamiento realizado por la pitcher.\n\nAl finalizar, se mostrará qué lanzamiento ha realizado la pitcher, en base a sus movimientos y la trayectoria descripta por la pelota.\n");
+        jTextArea2.setWrapStyleWord(true);
+        jTextArea2.setMinimumSize(new java.awt.Dimension(244, 174));
+
+        javax.swing.GroupLayout helpDialogLayout = new javax.swing.GroupLayout(helpDialog.getContentPane());
+        helpDialog.getContentPane().setLayout(helpDialogLayout);
+        helpDialogLayout.setHorizontalGroup(
+            helpDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(helpDialogLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(helpDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(helpDialogLayout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(34, 34, 34))
+                    .addGroup(helpDialogLayout.createSequentialGroup()
+                        .addComponent(jTextArea2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
+        );
+        helpDialogLayout.setVerticalGroup(
+            helpDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(helpDialogLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextArea2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(63, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Fastpitch Expert");
+        setIconImage(getIconImage());
         setResizable(false);
 
         bg_lbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/bg.png"))); // NOI18N
@@ -173,7 +270,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(questionPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(questionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jScrollPane1)
                     .addGroup(questionPanelLayout.createSequentialGroup()
                         .addComponent(question_options, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -191,7 +288,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(question_options, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(71, 71, 71)
                 .addGroup(questionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -255,12 +352,12 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(description_text, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(description_label, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(73, 73, 73)
                     .addComponent(descrImgPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(206, Short.MAX_VALUE)))
+                    .addContainerGap(115, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -287,7 +384,7 @@ public class Main extends javax.swing.JFrame {
         );
         descrPanelLayout.setVerticalGroup(
             descrPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DescriptionPane, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+            .addComponent(DescriptionPane, javax.swing.GroupLayout.DEFAULT_SIZE, 5, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -347,11 +444,11 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_newActionPerformed
 
     private void btn_infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_infoActionPerformed
-        // TODO add your handling code here:
+        infoDialog.setVisible(true);
     }//GEN-LAST:event_btn_infoActionPerformed
 
     private void btn_helpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_helpActionPerformed
-        // TODO add your handling code here:
+        helpDialog.setVisible(true);
     }//GEN-LAST:event_btn_helpActionPerformed
 
     private void question_optionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_question_optionsActionPerformed
@@ -419,6 +516,14 @@ public class Main extends javax.swing.JFrame {
         }
     }
     
+    @Override
+    public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().
+                getImage(ClassLoader.getSystemResource("res/nuevo_over.png"));
+
+
+        return retValue;
+    }
     //-------------------------- ^ Mi codigo aca! ^ -----------------------//
     /**
      * @param args the command line arguments
@@ -475,11 +580,17 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel description_label;
     private javax.swing.JTextArea description_text;
     private javax.swing.Box.Filler filler1;
+    private javax.swing.JDialog helpDialog;
+    private javax.swing.JDialog infoDialog;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator3;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTextArea option_description;
     private javax.swing.JPanel questionPanel;
