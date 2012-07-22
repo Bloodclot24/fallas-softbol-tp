@@ -58,8 +58,6 @@ public class Main extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         question_lbl = new javax.swing.JTextArea();
         descrPanel = new javax.swing.JPanel();
-        DescriptionPane = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
         descrImgPanel = new javax.swing.JPanel();
         descrImg = new javax.swing.JLabel();
         description_label = new javax.swing.JLabel();
@@ -153,6 +151,9 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Fastpitch Expert");
         setIconImage(getIconImage());
+        setMaximumSize(new java.awt.Dimension(725, 500));
+        setMinimumSize(new java.awt.Dimension(725, 500));
+        setPreferredSize(new java.awt.Dimension(725, 500));
         setResizable(false);
 
         bg_lbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/bg.png"))); // NOI18N
@@ -270,7 +271,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(questionPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(questionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
                     .addComponent(jScrollPane1)
                     .addGroup(questionPanelLayout.createSequentialGroup()
                         .addComponent(question_options, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -302,13 +303,6 @@ public class Main extends javax.swing.JFrame {
         descrPanel.setMinimumSize(new java.awt.Dimension(380, 210));
         descrPanel.setPreferredSize(new java.awt.Dimension(391, 210));
 
-        DescriptionPane.setBorder(null);
-        DescriptionPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        DescriptionPane.setAutoscrolls(true);
-        DescriptionPane.setPreferredSize(new java.awt.Dimension(368, 433));
-
-        jPanel1.setPreferredSize(new java.awt.Dimension(440, 427));
-
         descrImgPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.white, null, null));
 
         descrImg.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -324,9 +318,7 @@ public class Main extends javax.swing.JFrame {
         );
         descrImgPanelLayout.setVerticalGroup(
             descrImgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, descrImgPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(descrImg))
+            .addComponent(descrImg)
         );
 
         description_label.setFont(new java.awt.Font("Berlin Sans FB", 2, 24)); // NOI18N
@@ -337,75 +329,66 @@ public class Main extends javax.swing.JFrame {
         description_text.setEditable(false);
         description_text.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         description_text.setLineWrap(true);
-        description_text.setRows(20);
+        description_text.setRows(5);
         description_text.setWrapStyleWord(true);
         description_text.setAutoscrolls(false);
-        description_text.setMinimumSize(new java.awt.Dimension(164, 140));
+        description_text.setMinimumSize(new java.awt.Dimension(164, 20));
         description_text.setVerifyInputWhenFocusTarget(false);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(description_text, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(description_label, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(73, 73, 73)
-                    .addComponent(descrImgPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(115, Short.MAX_VALUE)))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(291, 291, 291)
-                .addComponent(description_label)
-                .addGap(18, 18, 18)
-                .addComponent(description_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(descrImgPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(424, Short.MAX_VALUE)))
-        );
-
-        DescriptionPane.setViewportView(jPanel1);
 
         javax.swing.GroupLayout descrPanelLayout = new javax.swing.GroupLayout(descrPanel);
         descrPanel.setLayout(descrPanelLayout);
         descrPanelLayout.setHorizontalGroup(
             descrPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DescriptionPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addGroup(descrPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(descrPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(descrPanelLayout.createSequentialGroup()
+                        .addComponent(description_label, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(description_text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(descrPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, descrPanelLayout.createSequentialGroup()
+                    .addContainerGap(103, Short.MAX_VALUE)
+                    .addComponent(descrImgPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(104, Short.MAX_VALUE)))
         );
         descrPanelLayout.setVerticalGroup(
             descrPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DescriptionPane, javax.swing.GroupLayout.DEFAULT_SIZE, 5, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, descrPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(description_label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(description_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(descrPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(descrPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(descrImgPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(166, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(questionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(questionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(6, 6, 6)
-                .addComponent(descrPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(bg_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(descrPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(bg_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(questionPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(descrPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addComponent(bg_lbl)
+                    .addComponent(questionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(descrPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+                    .addComponent(bg_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         questionPanel.getAccessibleContext().setAccessibleName("");
@@ -511,9 +494,15 @@ public class Main extends javax.swing.JFrame {
             System.out.println(resultado.tipoLanzamiento);
         }
         else {
-            description_label.setText("Sin Resultado");
-            System.out.println("Sin Resultado");
+            mostrarResultadoEspecial(resultado);
         }
+    }
+    
+    private void mostrarResultadoEspecial(DescrTipoLanzamiento resultado) {
+        //cuando no hay un match exacto con los lanzamientos considerados.
+        System.out.println("Lanzamiento Especial");
+        description_label.setText("Lanzamiento Especial");
+        description_text.setText("El lanzamiento no se corresponde con ningún lanzamiento en particular. ");
     }
     
     @Override
@@ -567,7 +556,6 @@ public class Main extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane DescriptionPane;
     private javax.swing.JLabel bg_lbl;
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnPrev;
@@ -584,7 +572,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JDialog infoDialog;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JToolBar.Separator jSeparator2;
