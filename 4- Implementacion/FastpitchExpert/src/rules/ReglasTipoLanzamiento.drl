@@ -31,7 +31,7 @@ rule "Curveball"
 no-loop true
     when
         (lanzamiento : Lanzamiento(distPeso == "Medio", pies == "Alineado", soltadoPelota == "Medio", movMunieca == "Mucho", traza == "Curva", velocidad == "Media" )
-        or lanzamiento : Lanzamiento(pies == "Alineado" , movMunieca == "Mucho", traza == "Curva", velocidad == "Media")
+        or lanzamiento : Lanzamiento( pies == "Alineado" , soltadoPelota != "Delante", movMunieca == "Mucho", traza == "Curva", velocidad == "Media")
         )
     then
         lanzamiento.setLanzamiento("Curveball");
