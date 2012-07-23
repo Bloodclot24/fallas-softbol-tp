@@ -18,12 +18,20 @@ public class FastpitchExpert {
     private static FastpitchExpert instance = new FastpitchExpert();
     private Lanzamiento _lanzamiento;
     
+    private Image _final;
+    
     private FastpitchExpert() {
         init();
+        _final = Toolkit.getDefaultToolkit().
+                getImage(ClassLoader.getSystemResource("res/SOFT-FRENTE2.png"));
     }
     
     public static FastpitchExpert getInstance() {
         return instance;
+    }
+    
+    public Image getFinalImage() {
+        return _final;
     }
     
     public final void init() {
@@ -42,7 +50,7 @@ public class FastpitchExpert {
     
    private Image loadImage(String path) {
        return Toolkit.getDefaultToolkit().
-                getImage(ClassLoader.getSystemResource(path)).getScaledInstance(200, 300, 0);
+                getImage(ClassLoader.getSystemResource(path)).getScaledInstance(250, 400, 0);
    }
    
    private void preguntaMunieca() {

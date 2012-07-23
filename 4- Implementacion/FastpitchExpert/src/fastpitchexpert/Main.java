@@ -61,10 +61,9 @@ public class Main extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         question_lbl = new javax.swing.JTextArea();
         descrPanel = new javax.swing.JPanel();
-        descrImgPanel = new javax.swing.JPanel();
-        descrImg = new javax.swing.JLabel();
         description_label = new javax.swing.JLabel();
         description_text = new javax.swing.JTextArea();
+        descrImg = new javax.swing.JLabel();
 
         infoDialog.setTitle("Fastpitch Expert - Acerca de");
         infoDialog.setIconImage(getIconImage());
@@ -154,9 +153,7 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Fastpitch Expert");
         setIconImage(getIconImage());
-        setMaximumSize(new java.awt.Dimension(725, 500));
         setMinimumSize(new java.awt.Dimension(725, 500));
-        setPreferredSize(new java.awt.Dimension(725, 500));
         setResizable(false);
 
         bg_lbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/bg.png"))); // NOI18N
@@ -275,13 +272,13 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(questionPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
                     .addGroup(questionPanelLayout.createSequentialGroup()
                         .addComponent(question_options, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 160, Short.MAX_VALUE))
                     .addGroup(questionPanelLayout.createSequentialGroup()
                         .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                         .addComponent(btnNext)))
                 .addContainerGap())
         );
@@ -306,24 +303,6 @@ public class Main extends javax.swing.JFrame {
         descrPanel.setMinimumSize(new java.awt.Dimension(380, 210));
         descrPanel.setPreferredSize(new java.awt.Dimension(391, 210));
 
-        descrImgPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, java.awt.Color.white, null, null));
-
-        descrImg.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        descrImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/fastpitch-softball-clipart-08.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout descrImgPanelLayout = new javax.swing.GroupLayout(descrImgPanel);
-        descrImgPanel.setLayout(descrImgPanelLayout);
-        descrImgPanelLayout.setHorizontalGroup(
-            descrImgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, descrImgPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(descrImg))
-        );
-        descrImgPanelLayout.setVerticalGroup(
-            descrImgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(descrImg)
-        );
-
         description_label.setFont(new java.awt.Font("Berlin Sans FB", 2, 24)); // NOI18N
         description_label.setText("FastBall");
 
@@ -338,37 +317,37 @@ public class Main extends javax.swing.JFrame {
         description_text.setMinimumSize(new java.awt.Dimension(164, 20));
         description_text.setVerifyInputWhenFocusTarget(false);
 
+        descrImg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        descrImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/res/fastpitch-softball-clipart-08.jpg"))); // NOI18N
+        descrImg.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+
         javax.swing.GroupLayout descrPanelLayout = new javax.swing.GroupLayout(descrPanel);
         descrPanel.setLayout(descrPanelLayout);
         descrPanelLayout.setHorizontalGroup(
             descrPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(descrPanelLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(descrPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(descrPanelLayout.createSequentialGroup()
-                        .addComponent(description_label, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(description_text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(descrPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(description_text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(description_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(descrPanelLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(descrImg)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(descrPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, descrPanelLayout.createSequentialGroup()
-                    .addContainerGap(103, Short.MAX_VALUE)
-                    .addComponent(descrImgPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(104, Short.MAX_VALUE)))
         );
         descrPanelLayout.setVerticalGroup(
             descrPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, descrPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(descrImg)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(description_label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(description_text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
-            .addGroup(descrPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(descrPanelLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(descrImgPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(166, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -379,10 +358,8 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(questionPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(6, 6, 6)
                 .addComponent(descrPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(bg_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 727, Short.MAX_VALUE)
+            .addComponent(bg_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -442,6 +419,8 @@ public class Main extends javax.swing.JFrame {
             if (!_actualizando) {
                 actualizarRespuesta();
                 _preguntaActual.elegirRespuesta(question_options.getSelectedIndex());
+                if (! FastpitchExpert.getInstance().hayProxima()) 
+                    limpiarResultado();
             }
         }catch(Exception e) {}
     }//GEN-LAST:event_question_optionsActionPerformed
@@ -488,9 +467,11 @@ public class Main extends javax.swing.JFrame {
         btnNext.setEnabled(true);
         description_label.setText("");
         description_text.setText("");
+        descrImg.setIcon(new ImageIcon(_preguntaActual.image));
     }
     
     private void procesarRespuestas() {
+        descrImg.setIcon(new ImageIcon(FastpitchExpert.getInstance().getFinalImage()));
         DescrTipoLanzamiento resultado = FastpitchExpert.getInstance().obtenerResultado();
         if(resultado != null){
             description_label.setText(resultado.tipoLanzamiento);
@@ -568,7 +549,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton btn_info;
     private javax.swing.JButton btn_new;
     private javax.swing.JLabel descrImg;
-    private javax.swing.JPanel descrImgPanel;
     private javax.swing.JPanel descrPanel;
     private javax.swing.JLabel description_label;
     private javax.swing.JTextArea description_text;
