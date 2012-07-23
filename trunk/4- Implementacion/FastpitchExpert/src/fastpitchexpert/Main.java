@@ -6,6 +6,9 @@ package fastpitchexpert;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.plaf.IconUIResource;
 import lanzamientos.DescrTipoLanzamiento;
 
 /**
@@ -473,6 +476,7 @@ public class Main extends javax.swing.JFrame {
         }
         question_options.setSelectedIndex(_preguntaActual.respuestaElegida());
         actualizarRespuesta();
+        descrImg.setIcon(new ImageIcon(_preguntaActual.image));
     }
     
     private void actualizarRespuesta() {
@@ -513,6 +517,7 @@ public class Main extends javax.swing.JFrame {
 
         return retValue;
     }
+        
     //-------------------------- ^ Mi codigo aca! ^ -----------------------//
     /**
      * @param args the command line arguments

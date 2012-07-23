@@ -1,5 +1,7 @@
 package fastpitchexpert;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import lanzamientos.DescrTipoLanzamiento;
 import lanzamientos.Lanzamiento;
@@ -30,19 +32,25 @@ public class FastpitchExpert {
         //inicializar las preguntas
         _preguntas = new ArrayList<Pregunta>();
         
-        preguntaRecorrido();
-        preguntaVelocidad();
         preguntaCuerpo();
+        preguntaPies();
+        preguntaVelocidad();
         preguntaMunieca();
         preguntaSoltado();
-        preguntaPies();
+        preguntaRecorrido();
     }
     
+   private Image loadImage(String path) {
+       return Toolkit.getDefaultToolkit().
+                getImage(ClassLoader.getSystemResource(path)).getScaledInstance(200, 300, 0);
+   }
+   
    private void preguntaMunieca() {
         Pregunta p = new Pregunta("munieca");
         _preguntas.add(p);
         p.pregunta = "¿Cuánto efecto de muñeca realizó el lanzamiento la pitcher?";
-
+        p.image = loadImage("res/SOFT-9.png");
+        
         Respuesta r = new Respuesta();
         r.respuesta = "Poco";
         r.codigo = "Poco";
@@ -66,7 +74,8 @@ public class FastpitchExpert {
         Pregunta p = new Pregunta("lugar");
         _preguntas.add(p);
         p.pregunta = "¿En qué lugar se soltó la pelota?";
-
+        p.image = loadImage("res/SOFT-10.png");
+        
         Respuesta r = new Respuesta();
         r.respuesta = "Atrás";
         r.codigo = "Atras";
@@ -90,7 +99,8 @@ public class FastpitchExpert {
         Pregunta p = new Pregunta("pies");
         _preguntas.add(p);
         p.pregunta = "¿Cuál era la posición de los pies de la lanzadora?";
-
+        p.image = loadImage("res/SOFT-7.png");
+        
         Respuesta r = new Respuesta();
         r.respuesta = "Alineados";
         r.codigo = "Alineado";
@@ -108,7 +118,8 @@ public class FastpitchExpert {
         Pregunta p = new Pregunta("peso");
         _preguntas.add(p);
         p.pregunta = "¿Cómo era la distribución del peso de la pitcher?";
-
+        p.image = loadImage("res/SOFT-5.png");
+        
         Respuesta r = new Respuesta();
         r.respuesta = "Atrás";
         r.codigo = "Atras";
@@ -132,7 +143,8 @@ public class FastpitchExpert {
        Pregunta p = new Pregunta("velocidad");
         _preguntas.add(p);
         p.pregunta = "¿Qué velocidad promedio alcanzó la pelota?";
-
+        p.image = loadImage("res/SOFT-8.png");
+        
         Respuesta r = new Respuesta();
         r.respuesta = "Baja";
         r.codigo = "Baja";
@@ -156,7 +168,8 @@ public class FastpitchExpert {
         Pregunta p = new Pregunta("traza");
         _preguntas.add(p);
         p.pregunta = "¿Cómo fué la traza del recorrido de la pelota?";
-
+        p.image = loadImage("res/SOFT-11.png");
+        
         Respuesta r = new Respuesta();
         r.respuesta = "Recta";
         r.codigo = "Recta";
